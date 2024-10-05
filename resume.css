@@ -3,37 +3,26 @@ body {
     line-height: 1.6;
     background-color: #e0f7fa;
     padding: 20px;
+    margin: 0;
 }
 
 .resume-container {
     background-color: #ffffff;
-    padding: 15px; /* Reduce padding */
+    padding: 15px;
     width: 100%;
-    max-width: 750px; /* Slightly reduce max-width to fit better in PDF */
+    max-width: 750px;
     margin: 0 auto;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-left: 5px solid #007bb5;
     overflow: hidden;
-}
-
-@media print {
-    .resume-container {
-        margin: 0;
-        padding: 10px; /* Further reduce padding for printing */
-        border: none; /* Remove border for printing to prevent extra page */
-    }
-}
-
-.resume-container * {
-    page-break-inside: avoid; /* Prevents children elements from breaking */
-    page-break-before: auto;
-    page-break-after: auto;
+    box-sizing: border-box;
 }
 
 .header-container {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    text-align: center;
 }
 
 .profile-img {
@@ -42,11 +31,12 @@ body {
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid #007bb5;
+    margin-bottom: 15px;
 }
 
 .contact-info {
-    text-align: right;
     color: #007bb5;
+    margin-bottom: 15px;
 }
 
 .intro-text {
@@ -90,14 +80,16 @@ a:hover {
 
 .btn-wrapper {
     display: flex;
-    justify-content: center;
-    width: 750px;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 750px;
     margin: auto;
 }
 
 button {
     display: block;
-    margin: 20px auto;
+    margin: 10px 0;
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
@@ -105,8 +97,47 @@ button {
     color: white;
     border: none;
     border-radius: 5px;
+    width: 100%;
+    max-width: 300px;
 }
 
 button:hover {
     background-color: #005f8a;
+}
+
+@media screen and (min-width: 768px) {
+    .header-container {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
+
+    .profile-img {
+        margin-bottom: 0;
+    }
+
+    .contact-info {
+        text-align: right;
+    }
+
+    .btn-wrapper {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    button {
+        margin: 10px;
+    }
+}
+
+@media print {
+    .resume-container {
+        margin: 0;
+        padding: 10px;
+        border: none;
+    }
+
+    .btn-wrapper {
+        display: none;
+    }
 }
