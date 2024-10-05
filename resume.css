@@ -1,0 +1,112 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #e0f7fa;
+    padding: 20px;
+}
+
+.resume-container {
+    background-color: #ffffff;
+    padding: 15px; /* Reduce padding */
+    width: 100%;
+    max-width: 750px; /* Slightly reduce max-width to fit better in PDF */
+    margin: 0 auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid #007bb5;
+    overflow: hidden;
+}
+
+@media print {
+    .resume-container {
+        margin: 0;
+        padding: 10px; /* Further reduce padding for printing */
+        border: none; /* Remove border for printing to prevent extra page */
+    }
+}
+
+.resume-container * {
+    page-break-inside: avoid; /* Prevents children elements from breaking */
+    page-break-before: auto;
+    page-break-after: auto;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #007bb5;
+}
+
+.contact-info {
+    text-align: right;
+    color: #007bb5;
+}
+
+.intro-text {
+    text-align: left;
+    margin-top: 20px;
+    color: #007bb5;
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+h2 {
+    color: #007bb5;
+    border-bottom: 2px solid #007bb5;
+    padding-bottom: 5px;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+li::before {
+    content: "• ";
+    color: #007bb5;
+}
+
+a {
+    color: #007bb5;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.btn-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 750px;
+    margin: auto;
+}
+
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #007bb5;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #005f8a;
+}
